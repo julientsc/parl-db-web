@@ -59,6 +59,28 @@ angular.module('myApp.services', [])
                 });
         }
 
+        this.getCouncillors = function(d) {
+            //console.log("/parl/councillor");
+            $http.get(this.url + '/parl/councillor').
+                success(function(data, status, headers, config) {
+                    d(data);
+                }).
+                error(function(data, status, headers, config) {
+                    d(null);
+                });
+        }
+
+        this.getCouncillor = function(d, id) {
+            //console.log("/parl/councillor");
+            $http.get(this.url + '/parl/councillor/' + id).
+                success(function(data, status, headers, config) {
+                    d(data, id);
+                }).
+                error(function(data, status, headers, config) {
+                    d(null);
+                });
+        }
+
 
 
     });

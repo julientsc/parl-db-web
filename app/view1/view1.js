@@ -101,5 +101,14 @@ angular.module('myApp.view1', ['ngRoute', 'myApp.services', 'ui.multiselect'])
             $location.search(loc);
 
         }
+
+
+        $scope.updateCouncillors = function (data) {
+            $scope.councillors = data;
+        }
+
+
+        QueriesService.getCouncillors($scope.updateCouncillors);
+
     }]);
 

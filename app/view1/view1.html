@@ -25,3 +25,5 @@
              ng-model="selection.parties" ms-header="" ms-selected="{{selection.parties.length}} parti(s) choisi(s)"
              options="party.name for party in filters.parties"
              change="changeSelection()"></multiselect>
+
+<div ng-repeat="councillor in councillors | orderBy: 'firstname'">{{councillor.firstname}} {{councillor.lastname}}</div>
