@@ -1,15 +1,27 @@
 <h1>{{title}}</h1>
 
 
-{{cantons}}
+<multiselect class="input-lg" multiple="true" style="width:500px;"
+             ng-model="selection.cantons" ms-header="" ms-selected="{{selection.cantons.length}} canton(s) choisi(s)"
+             options="canton.name for canton in filters.cantons"
+             change="changeSelection()"></multiselect>
 
-<button ng-click="display()">test</button>
+<multiselect class="input-lg" multiple="true"
+             ng-model="selection.councils" ms-header="" ms-selected="{{selection.councils.length}} council(s) choisi(s)"
+             options="council.name for council in filters.councils"
+             change="changeSelection()"></multiselect>
 
-<!--
-$scope.cantons = QueriesService.getCantons();
-$scope.councils = QueriesService.getCouncils();
-$scope.factions = QueriesService.getFactions();
-$scope.languages = QueriesService.getLanguages();
-$scope.parties = QueriesService.getParties();
--->
+<multiselect class="input-lg" multiple="true"
+             ng-model="selection.factions" ms-header="" ms-selected="{{selection.factions.length}} faction(s) choisie(s)"
+             options="faction.name for faction in filters.factions"
+             change="changeSelection()"></multiselect>
 
+<multiselect class="input-lg" multiple="true"
+             ng-model="selection.languages" ms-header="" ms-selected="{{selection.languages.length}} langue(s) choisie(s)"
+             options="language.id for language in filters.languages"
+             change="changeSelection()"></multiselect>
+
+<multiselect class="input-lg" multiple="true"
+             ng-model="selection.parties" ms-header="" ms-selected="{{selection.parties.length}} parti(s) choisi(s)"
+             options="party.name for party in filters.parties"
+             change="changeSelection()"></multiselect>

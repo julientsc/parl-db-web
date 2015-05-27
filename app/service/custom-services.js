@@ -4,58 +4,58 @@ angular.module('myApp.services', [])
         this.url = "http://localhost:8080/rest";
 
         this.getCantons = function(d) {
-            console.log("/parl/canton");
+            //console.log("/parl/canton");
             $http.get(this.url + '/parl/canton').
                 success(function(data, status, headers, config) {
                     d(data);
                 }).
                 error(function(data, status, headers, config) {
-                    return null;
+                    d(null);
                 });
         }
 
-        this.getCouncils = function() {
-            console.log("/parl/council");
+        this.getCouncils = function(d) {
+            //console.log("/parl/council");
             $http.get(this.url + '/parl/council').
                 success(function(data, status, headers, config) {
-                    return data;
+                    d(data);
                 }).
                 error(function(data, status, headers, config) {
-                    return null;
+                    d(null);
                 });
         }
-        this.getFactions = function() {
-            console.log("/parl/faction");
+        this.getFactions = function(d) {
+            //console.log("/parl/faction");
             $http.get(this.url + '/parl/faction').
                 success(function(data, status, headers, config) {
-                    return data;
+                    d(data);
                 }).
                 error(function(data, status, headers, config) {
-                    return null;
+                    d(null);
                 });
         }
 
 
-        this.getLanguages = function() {
-            console.log("/parl/language");
+        this.getLanguages = function(d) {
+            //console.log("/parl/language");
             $http.get(this.url + '/parl/language').
                 success(function(data, status, headers, config) {
-                    return data;
+                    d(data);
                 }).
                 error(function(data, status, headers, config) {
-                    return null;
+                    d(null);
                 });
         }
 
 
-        this.getParties = function() {
-            console.log("/parl/party");
+        this.getParties = function(d) {
+            //console.log("/parl/party");
             $http.get(this.url + '/parl/party').
                 success(function(data, status, headers, config) {
-                    return data;
+                    d(data);
                 }).
                 error(function(data, status, headers, config) {
-                    return null;
+                    d(null);
                 });
         }
 

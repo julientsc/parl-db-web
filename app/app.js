@@ -10,5 +10,5 @@ angular.module('myApp', [
     'myApp.services'
 ]).
     config(['$routeProvider', function ($routeProvider) {
-        $routeProvider.otherwise({redirectTo: '/view1'});
+        $routeProvider.otherwise({redirectTo: '/view2', reloadOnSearch: false});
     }]);
