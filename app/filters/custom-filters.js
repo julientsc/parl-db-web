@@ -1,4 +1,4 @@
-angular.module('councillorFilters', ['myApp.view1']).filter('isCouncillorSelected', function () {
+angular.module('councillorFilters', ['myApp.filter']).filter('isCouncillorSelected', function () {
     return function (councillors, selections) {
         //console.log(selections);
         // console.log(councillors);

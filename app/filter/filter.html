@@ -1,6 +1,3 @@
-<h1>{{title}}</h1>
-
-
 <multiselect class="input-lg" multiple="true" style="width:500px;"
              ng-model="selection.cantons" ms-header="Filtre Canton" ms-selected="{{selection.cantons.length}} canton(s) choisi(s)"
              options="canton.name for canton in filters.cantons"
@@ -26,5 +23,7 @@
              options="party.name for party in filters.parties"
              change="changeSelection()"></multiselect>
 
-
-<div ng-repeat="councillor in councillors | isCouncillorSelected:selection">{{councillor.firstname}} {{councillor.lastname}} | {{councillor.lang}} {{councillor}}</div>
+<!--
+<div ng-repeat="councillor in councillors | isCouncillorSelected:selection">{{councillor.firstname}} {{councillor.lastname}}</div>
+{{toto}}
+-->
