@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('myApp.view1', ['ngRoute', 'myApp.services', 'ui.multiselect'])
+angular.module('myApp.view1', ['ngRoute', 'myApp.services', 'ui.multiselect', 'councillorFilters'])
 
     .config(['$routeProvider', function ($routeProvider) {
         $routeProvider.when('/view1:name?', {

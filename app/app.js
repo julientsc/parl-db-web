@@ -7,7 +7,8 @@ angular.module('myApp', [
     'myApp.view2',
     'myApp.version',
 
-    'myApp.services'
+    'myApp.services',
+    'councillorFilters'
 ]).
     config(['$routeProvider', function ($routeProvider) {
         $routeProvider.otherwise({redirectTo: '/view2', reloadOnSearch: false});

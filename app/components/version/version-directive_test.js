@@ -3,7 +3,7 @@
 describe('myApp.version module', function() {
   beforeEach(module('myApp.version'));
 
-  describe('app-version service', function() {
+  describe('app-version services', function() {
     it('should print current version', function() {
       module(function($provide) {
         $provide.value('version', 'TEST_VER');
