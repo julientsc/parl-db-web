@@ -1,27 +1,41 @@
-<multiselect class="input-lg" multiple="true" style="width:500px;"
+<div>
+<multiselect class="input-lg" multiple="true" style="background: yellow;"
              ng-model="selection.cantons" ms-header="Filtre Canton" ms-selected="{{selection.cantons.length}} canton(s) choisi(s)"
              options="canton.name for canton in filters.cantons"
              change="changeSelection()"></multiselect>
-
+</div>
+<div>
 <multiselect class="input-lg" multiple="true"
              ng-model="selection.councils" ms-header="Filtre Conseil" ms-selected="{{selection.councils.length}} council(s) choisi(s)"
              options="council.name for council in filters.councils"
              change="changeSelection()"></multiselect>
-
+</div>
+<div>
 <multiselect class="input-lg" multiple="true"
              ng-model="selection.factions" ms-header="Filtre Groupe" ms-selected="{{selection.factions.length}} faction(s) choisie(s)"
              options="faction.name for faction in filters.factions"
              change="changeSelection()"></multiselect>
-
+</div>
+<div>
 <multiselect class="input-lg" multiple="true"
              ng-model="selection.languages" ms-header="Filtre Langue" ms-selected="{{selection.languages.length}} langue(s) choisie(s)"
              options="language.id for language in filters.languages"
              change="changeSelection()"></multiselect>
-
+</div>
+<div>
 <multiselect class="input-lg" multiple="true"
              ng-model="selection.parties" ms-header="Filtre Party" ms-selected="{{selection.parties.length}} parti(s) choisi(s)"
              options="party.name for party in filters.parties"
              change="changeSelection()"></multiselect>
+</div>
+
+<multiselect class="input-xlarge" multiple="true"
+             ng-model="selectedCar"
+             options="c.name for c in cars"
+             change="selected()" ></multiselect>
+<div class="well well-small">
+    {{selectedCar}}
+</div>
 
 <!--
 <div ng-repeat="councillor in councillors | isCouncillorSelected:selection">{{councillor.firstname}} {{councillor.lastname}}</div>
