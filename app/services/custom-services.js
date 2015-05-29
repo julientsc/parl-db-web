@@ -4,79 +4,37 @@ angular.module('myApp.services', [])
         this.url = "http://localhost:8080/rest";
 
         this.getCantons = function(d) {
-            //console.log("/parl/canton");
-            $http.get(this.url + '/parl/canton').
-                success(function(data, status, headers, config) {
-                    d(data);
-                }).
-                error(function(data, status, headers, config) {
-                    d(null);
-                });
+            this.callGetHTTP(d, this.url + '/parl/canton');
         }
 
         this.getCouncils = function(d) {
-            //console.log("/parl/council");
-            $http.get(this.url + '/parl/council').
-                success(function(data, status, headers, config) {
-                    d(data);
-                }).
-                error(function(data, status, headers, config) {
-                    d(null);
-                });
+            this.callGetHTTP(d, this.url + '/parl/council');
         }
         this.getFactions = function(d) {
-            //console.log("/parl/faction");
-            $http.get(this.url + '/parl/faction').
-                success(function(data, status, headers, config) {
-                    d(data);
-                }).
-                error(function(data, status, headers, config) {
-                    d(null);
-                });
+            this.callGetHTTP(d, this.url + '/parl/faction');
         }
-
 
         this.getLanguages = function(d) {
-            //console.log("/parl/language");
-            $http.get(this.url + '/parl/language').
-                success(function(data, status, headers, config) {
-                    d(data);
-                }).
-                error(function(data, status, headers, config) {
-                    d(null);
-                });
+            this.callGetHTTP(d, this.url + '/parl/language');
         }
 
-
         this.getParties = function(d) {
-            //console.log("/parl/party");
-            $http.get(this.url + '/parl/party').
-                success(function(data, status, headers, config) {
-                    d(data);
-                }).
-                error(function(data, status, headers, config) {
-                    d(null);
-                });
+            this.callGetHTTP(d, this.url + '/parl/party');
         }
 
         this.getCouncillors = function(d) {
-            console.log("/parl/councillor");
-            $http.get(this.url + '/parl/councillor').
-                success(function(data, status, headers, config) {
-                    d(data);
-                }).
-                error(function(data, status, headers, config) {
-                    d(null);
-                });
+            this.callGetHTTP(d, this.url + '/parl/councillor');
         }
 
-        this.getCouncillor = function(d, id) {
-            //console.log("/parl/councillor");
-            $http.get(this.url + '/parl/councillor/' + id).
+
+        this.callGetHTTP = function(callback, url) {
+            $http.get(url).
                 success(function(data, status, headers, config) {
-                    d(data, id);
+                    console.log("Sucess : " + url);
+                    callback(data);
                 }).
                 error(function(data, status, headers, config) {
+                    console.error("Error : " + url);
                     d(null);
                 });
         }
