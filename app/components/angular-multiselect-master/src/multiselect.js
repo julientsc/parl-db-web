@@ -58,7 +58,7 @@ angular.module('ui.multiselect', [])
           });
 
           var popUpEl = angular.element('<multiselect-popup' + 
-                        (attrs.templateUrl ? (' template-url="' + attrs.templateUrl + '"'): '' ) + 
+                        (attrs.templateUrl ? (' templates-url="' + attrs.templateUrl + '"'): '' ) +
                         '></multiselect-popup>');
 						
           //required validator

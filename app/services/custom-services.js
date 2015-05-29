@@ -60,7 +60,7 @@ angular.module('myApp.services', [])
         }
 
         this.getCouncillors = function(d) {
-            //console.log("/parl/councillor");
+            console.log("/parl/councillor");
             $http.get(this.url + '/parl/councillor').
                 success(function(data, status, headers, config) {
                     d(data);

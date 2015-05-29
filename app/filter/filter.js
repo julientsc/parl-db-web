@@ -15,6 +15,7 @@ angular.module('myApp.filter', ['ngRoute', 'myApp.services', 'ui.multiselect', '
     .controller('filterCtrl', ['$scope', 'QueriesService', '$location', function ($scope, QueriesService, $location) {
 
         $scope.selection = {};
+
         $scope.selection.cantons = [];
         $scope.selection.councils = [];
         $scope.selection.factions = [];
@@ -25,37 +26,54 @@ angular.module('myApp.filter', ['ngRoute', 'myApp.services', 'ui.multiselect', '
 
         $scope.filters = {};
 
+        $scope.councillors = [];
+
+        $scope.updateCouncillors = function (data) {
+            $scope.councillors = angular.copy(data);
+        };
+
+        QueriesService.getCouncillors($scope.updateCouncillors);
+
+
+
         $scope.updateCantons = function (data) {
+            data = angular.copy(data);
             $scope.filters.cantons = data;
             $scope.setChecked("cantons", data);
             $scope.loadCount++;
         };
 
         $scope.updateCouncils = function (data) {
+            data = angular.copy(data);
             $scope.filters.councils = data;
             $scope.setChecked("councils", data);
             $scope.loadCount++;
         };
 
         $scope.updateFactions = function (data) {
+            data = angular.copy(data);
             $scope.filters.factions = data;
             $scope.setChecked("factions", data);
             $scope.loadCount++;
         };
 
         $scope.updateLanguages = function (data) {
+            data = angular.copy(data);
             $scope.filters.languages = data;
             $scope.setChecked("languages", data);
             $scope.loadCount++;
         };
 
         $scope.updateParties = function (data) {
+            data = angular.copy(data);
             $scope.filters.parties = data;
             $scope.setChecked("parties", data);
             $scope.loadCount++;
         };
 
         $scope.setChecked = function(name, data) {
+            name = angular.copy(name);
+            data = angular.copy(data);
             var v = $location.search()[name];
             var va = [];
             if (Object.prototype.toString.call(v) === '[object Array]') {
@@ -109,7 +127,7 @@ angular.module('myApp.filter', ['ngRoute', 'myApp.services', 'ui.multiselect', '
         return {
             restrict: 'E',
             scope: {
-                selection: '=model'
+                councillors: '=councillors'
             },
             templateUrl: 'filter/filter.html',
             controller: 'filterCtrl'
