@@ -13,7 +13,7 @@ angular.module('councillorFilters', ['myApp.filter']).filter('isCouncillorSelect
             if(mustSave) {
                 mustSave = false;
 
-                if(selections.languages.length == 0)
+                if(selections.languages == null || selections.languages.length == 0)
                     mustSave = true;
                 else
                 for(var languageId in selections.languages) {
@@ -29,7 +29,7 @@ angular.module('councillorFilters', ['myApp.filter']).filter('isCouncillorSelect
             if(mustSave) {
                 mustSave = false;
 
-                if(selections.cantons.length == 0)
+                if(selections.cantons == null || selections.cantons.length == 0)
                     mustSave = true;
                 else
                 for(var cantonId in selections.cantons) {
@@ -44,7 +44,7 @@ angular.module('councillorFilters', ['myApp.filter']).filter('isCouncillorSelect
             if(mustSave) {
                 mustSave = false;
 
-                if(selections.councils.length == 0)
+                if(selections.councils == null || selections.councils.length == 0)
                     mustSave = true;
                 else
                 for(var councilId in selections.councils) {
@@ -65,7 +65,7 @@ angular.module('councillorFilters', ['myApp.filter']).filter('isCouncillorSelect
             if(mustSave) {
                 mustSave = false;
 
-                if(selections.factions.length == 0)
+                if(selections.factions == null || selections.factions.length == 0)
                     mustSave = true;
                 else
                 for(var councilId in selections.factions) {
@@ -86,7 +86,7 @@ angular.module('councillorFilters', ['myApp.filter']).filter('isCouncillorSelect
             if(mustSave) {
                 mustSave = false;
 
-                if(selections.parties.length == 0)
+                if(selections.parties == null || selections.parties.length == 0)
                     mustSave = true;
                 else
                 for(var councilId in selections.parties) {

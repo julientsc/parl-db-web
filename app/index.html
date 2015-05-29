@@ -27,41 +27,69 @@
 
     <style>
 
-        multiselect {
-            display:block;
+        body {
+            padding-top: 50px;
         }
-        multiselect .btn {
-            width: 100%;
-            background-color: #FFF;
+
+        .starter-template {
+            padding: 40px 15px;
         }
-        multiselect .btn.error{
-            border: 1px solid #da4f49 !important;
-        }
-        multiselect .dropdown-menu {
-            max-height: 300px;
-            overflow-y: auto;
-        }
-        multiselect .dropdown-menu {
-            width: 100%;
-            box-sizing: border-box;
-            padding: 2px;
-        }
-        multiselect .dropdown-menu > li > a {
-            padding: 3px 10px;
-            cursor:pointer;
-        }
+
+
     </style>
 </head>
-<body>
-<!--
-  <ul class="menu">
-    <li><a href="#/filter">filter</a></li>
-    <li><a href="#/view2">view2</a></li>
-  </ul>
--->
+<body role="document">
+
+<!-- Fixed navbar -->
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Bootstrap theme</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="#">Action</a></li>
+                        <li><a href="#">Another action</a></li>
+                        <li><a href="#">Something else here</a></li>
+                        <li class="divider"></li>
+                        <li class="dropdown-header">Nav header</li>
+                        <li><a href="#">Separated link</a></li>
+                        <li><a href="#">One more separated link</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div><!--/.nav-collapse -->
+    </div>
+</nav>
 
 
-<div ng-view></div>
+<div class="container">
+
+    <div class="starter-template">
+
+
+        <div class="starter-template">
+            <div ng-view></div>
+        </div>
+
+
+
+    </div>
+
+</div>
+
 
 
 <!-- In production use:

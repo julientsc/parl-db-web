@@ -14,8 +14,6 @@ angular.module('myApp.filter', ['ngRoute', 'myApp.services', 'ui.multiselect', '
 
     .controller('filterCtrl', ['$scope', 'QueriesService', '$location', function ($scope, QueriesService, $location) {
 
-        $scope.toto  = "tata";
-
         $scope.selection = {};
         $scope.selection.cantons = [];
         $scope.selection.councils = [];
@@ -105,12 +103,6 @@ angular.module('myApp.filter', ['ngRoute', 'myApp.services', 'ui.multiselect', '
 
         };
 
-
-        $scope.updateCouncillors = function (data) {
-            $scope.councillors = data;
-        };
-
-        QueriesService.getCouncillors($scope.updateCouncillors);
 
     }])
     .directive('filter', function() {
