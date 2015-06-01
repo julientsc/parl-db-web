@@ -1,12 +1,12 @@
 'use strict';
 
-angular.module('myApp.view.default', ['ngRoute', 'myApp.filter', 'myApp.services', 'myApp.view.filter', 'myApp.view.councillors'])
+angular.module('myApp.view.social.otherActors', ['ngRoute', 'myApp.filter', 'myApp.services', 'myApp.view.filter', 'myApp.view.councillors'])
 
     .config(['$routeProvider', function ($routeProvider) {
 
-        $routeProvider.when('/', {
-            templateUrl: 'views/default/template.html',
-            controller: 'DefaultController',
+        $routeProvider.when('/social/other-actors', {
+            templateUrl: 'views/social/other-actors/template.html',
+            controller: 'SocialOtherActorsController',
             reloadOnSearch: false
         })
 
@@ -14,10 +14,10 @@ angular.module('myApp.view.default', ['ngRoute', 'myApp.filter', 'myApp.services
 
 
 
-    .controller('DefaultController', ['$scope', 'QueriesService', '$location', '$interval', function ($scope, QueriesService, $location, $interval) {
+    .controller('SocialOtherActorsController', ['$scope', 'QueriesService', '$location', '$interval', function ($scope, QueriesService, $location, $interval) {
 
-        $scope.title = "My Title";
-
+        $scope.title = "Acteurs sociaux en lien avec les parlementaires";
+        $scope.description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas vulputate commodo elit a maximus. Praesent consectetur urna quis orci efficitur, sed lacinia quam tincidunt. Fusce feugiat risus vitae erat varius facilisis. Aliquam ornare eros magna, eget lacinia mauris vestibulum eu. Ut tempus elit ac lectus malesuada, a porta velit iaculis. Nulla ut elementum nisl, vitae egestas tortor. Etiam pharetra erat et dolor cursus pharetra at et mauris. Curabitur id nunc vestibulum nibh elementum gravida. In accumsan cursus mattis. Curabitur quis magna quam. Etiam sollicitudin nunc eget felis convallis, nec porta magna cursus.";
 
         $scope.councillors = [];
 

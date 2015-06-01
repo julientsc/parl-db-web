@@ -1,23 +1,22 @@
 'use strict';
 
-angular.module('myApp.view.default', ['ngRoute', 'myApp.filter', 'myApp.services', 'myApp.view.filter', 'myApp.view.councillors'])
+angular.module('myApp.view.social.periodActivity', ['ngRoute', 'myApp.filter', 'myApp.services', 'myApp.view.filter', 'myApp.view.councillors'])
 
     .config(['$routeProvider', function ($routeProvider) {
 
-        $routeProvider.when('/', {
-            templateUrl: 'views/default/template.html',
-            controller: 'DefaultController',
+        $routeProvider.when('/social/period-activity', {
+            templateUrl: 'views/social/period-activity/template.html',
+            controller: 'SocialPeriodActivityController',
             reloadOnSearch: false
         })
 
     }])
 
 
+    .controller('SocialPeriodActivityController', ['$scope', 'QueriesService', '$location', '$interval', function ($scope, QueriesService, $location, $interval) {
 
-    .controller('DefaultController', ['$scope', 'QueriesService', '$location', '$interval', function ($scope, QueriesService, $location, $interval) {
-
-        $scope.title = "My Title";
-
+        $scope.title = "Période d'activité";
+        $scope.description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas vulputate commodo elit a maximus. Praesent consectetur urna quis orci efficitur, sed lacinia quam tincidunt. Fusce feugiat risus vitae erat varius facilisis. Aliquam ornare eros magna, eget lacinia mauris vestibulum eu. Ut tempus elit ac lectus malesuada, a porta velit iaculis. Nulla ut elementum nisl, vitae egestas tortor. Etiam pharetra erat et dolor cursus pharetra at et mauris. Curabitur id nunc vestibulum nibh elementum gravida. In accumsan cursus mattis. Curabitur quis magna quam. Etiam sollicitudin nunc eget felis convallis, nec porta magna cursus.";
 
         $scope.councillors = [];
 
@@ -30,43 +29,43 @@ angular.module('myApp.view.default', ['ngRoute', 'myApp.filter', 'myApp.services
         };
         QueriesService.getCouncillors($scope.updateCouncillors);
 
-        $scope.updateCouncillor = function() {
+        $scope.updateCouncillor = function () {
             console.log("update");
             $scope.filtredCouncillors = [];
             $scope.filtredCouncillors4 = [];
 
             var selectedCantons = [];
-            _.each( $scope.filter.canton, function( val, key ) {
-                if ( val.isSelected ) {
+            _.each($scope.filter.canton, function (val, key) {
+                if (val.isSelected) {
                     selectedCantons.push(key);
                 }
             });
 
             var selectedParties = [];
-            _.each( $scope.filter.party, function( val, key ) {
-                if ( val.isSelected ) {
+            _.each($scope.filter.party, function (val, key) {
+                if (val.isSelected) {
                     selectedParties.push(key);
                 }
             });
 
             var selectedLangugage = [];
-            _.each( $scope.filter.lang, function( val, key ) {
-                if ( val.isSelected ) {
+            _.each($scope.filter.lang, function (val, key) {
+                if (val.isSelected) {
                     selectedLangugage.push(key);
                 }
             });
 
-            var selectedFaction= [];
-            _.each( $scope.filter.faction, function( val, key ) {
-                if ( val.isSelected ) {
+            var selectedFaction = [];
+            _.each($scope.filter.faction, function (val, key) {
+                if (val.isSelected) {
                     selectedFaction.push(key);
                 }
             });
 
-            var selectedCouncil= [];
-            _.each( $scope.filter.council, function( val, key ) {
-                if ( val.isSelected ) {
-                    if(key == 1)
+            var selectedCouncil = [];
+            _.each($scope.filter.council, function (val, key) {
+                if (val.isSelected) {
+                    if (key == 1)
                         selectedCouncil.push("N");
                     else
                         selectedCouncil.push("S");
@@ -104,48 +103,47 @@ angular.module('myApp.view.default', ['ngRoute', 'myApp.filter', 'myApp.services
                     }
                 }
 
-                if(_.size(selectedCantons) != 0) {
-                    if(_.size(_.intersection(cantons, selectedCantons)) == 0)
+                if (_.size(selectedCantons) != 0) {
+                    if (_.size(_.intersection(cantons, selectedCantons)) == 0)
                         mustAdd = false;
 
                 }
 
-                if(_.size(selectedParties) != 0) {
-                    if(_.size(_.intersection(parties, selectedParties)) == 0)
+                if (_.size(selectedParties) != 0) {
+                    if (_.size(_.intersection(parties, selectedParties)) == 0)
                         mustAdd = false;
                 }
 
-                if(_.size(selectedLangugage) != 0) {
-                    if(_.size(_.intersection(langs, selectedLangugage)) == 0)
+                if (_.size(selectedLangugage) != 0) {
+                    if (_.size(_.intersection(langs, selectedLangugage)) == 0)
                         mustAdd = false;
                 }
 
-                if(_.size(selectedFaction) != 0) {
-                    if(_.size(_.intersection(factions, selectedFaction)) == 0)
+                if (_.size(selectedFaction) != 0) {
+                    if (_.size(_.intersection(factions, selectedFaction)) == 0)
                         mustAdd = false;
                 }
 
-                if(_.size(selectedCouncil) != 0) {
+                if (_.size(selectedCouncil) != 0) {
 
-                    if(_.size(_.intersection(councils, selectedCouncil)) == 0)
+                    if (_.size(_.intersection(councils, selectedCouncil)) == 0)
                         mustAdd = false;
 
                 }
 
 
-
-                if(mustAdd) {
+                if (mustAdd) {
                     $scope.filtredCouncillors.push(councillor);
 
                     line.push(councillor);
-                    if(_.size(line) == 4) {
+                    if (_.size(line) == 4) {
                         $scope.filtredCouncillors4.push(line);
                         line = [];
                     }
                 }
             }
 
-            if(_.size(line) >0 )
+            if (_.size(line) > 0)
                 $scope.filtredCouncillors4.push(line);
 
         }

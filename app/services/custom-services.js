@@ -36,7 +36,7 @@ angular.module('myApp.services', [])
                 }).
                 error(function (data, status, headers, config) {
                     console.error("Error : " + url);
-                    d(null);
+                    callback(null);
                 });
         }
 

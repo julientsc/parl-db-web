@@ -54,21 +54,28 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#">Accueil</a></li>
+
+
+
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                    <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Réseaux sociaux<span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
-                        <li><a href="#">Action</a></li>
-                        <li><a href="#">Another action</a></li>
-                        <li><a href="#">Something else here</a></li>
+                        <li class="dropdown-header">Utilisation des réseaux sociaux</li>
+                        <li><a href="#"></a></li>
+                        <li><a href="#/social/period-activity">Période d'activité</a></li>
+                        <li><a href="#/social/frequence-activity">Evolution de l'activité</a></li>
                         <li class="divider"></li>
-                        <li class="dropdown-header">Nav header</li>
-                        <li><a href="#">Separated link</a></li>
-                        <li><a href="#">One more separated link</a></li>
+                        <li class="dropdown-header">Classements et relations</li>
+                        <li><a href="#/social/general-ranking">Classement général</a></li>
+                        <li><a href="#/social/friends-followers">Relations entre parlementaires</a></li>
+                        <li><a href="#/social/other-actors">Autres acteurs présents</a></li>
                     </ul>
                 </li>
+
+
+                <li><a href="#contact">Contact</a></li>
+
             </ul>
         </div><!--/.nav-collapse -->
     </div>
@@ -80,9 +87,7 @@
     <div class="starter-template">
 
 
-        <div class="starter-template">
             <div ng-view></div>
-        </div>
 
 
 
@@ -101,6 +106,9 @@
 <script src="bower_components/angular-route/angular-route.js"></script>
 <script src="app.js"></script>
 
+<script src="http://code.highcharts.com/adapters/standalone-framework.js"></script>
+<script src="http://code.highcharts.com/highcharts.js"></script>
+
 <script src="http://underscorejs.org/underscore-min.js"></script>
 
 <script src="bower_components/jquery/dist/jquery.min.js"></script>
@@ -109,6 +117,20 @@
 <script src="views/default/view.js"></script>
 <script src="views/filter/view.js"></script>
 <script src="views/councillors/view.js"></script>
+<script src="views/councillorsByAge/view.js"></script>
+
+
+
+
+<script src="views/social/frequence-activity/view.js"></script>
+<script src="views/social/friends-followers/view.js"></script>
+<script src="views/social/general-ranking/view.js"></script>
+<script src="views/social/other-actors/view.js"></script>
+<script src="views/social/period-activity/view.js"></script>
+<script src="views/social/view.js"></script>
+
+
+
 
 <script src="services/custom-services.js"></script>
 <script src="templates/templates.js"></script>
