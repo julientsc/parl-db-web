@@ -32,7 +32,7 @@ angular.module('myApp.view.councillors', ['ngRoute', 'myApp.filter', 'myApp.serv
             },
             template: '<div style="margin: 3px"><div ng-if="councillor != null" class="text-center">' +
                         '<img class="img-thumbnail" ng-src="http://www.parlament.ch/SiteCollectionImages/profil/gross/{{councillor.number}}.jpg" alt="{{councillor.firstname}} {{councillor.lastname}}" />' +
-                        '</div><div class="text-center" style="font-size:10px">{{councillor.firstname}} {{councillor.lastname}}</div></div>'
+                        '</div><div class="text-center" style="font-size:10px">{{councillor.firstname}} {{councillor.lastname}} {{councillor.id}}</div></div>'
         };
     })
 
