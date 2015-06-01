@@ -1,9 +1,6 @@
 angular.module('councillorFilters', ['myApp.filter'])
     .filter('isCouncillorSelected', function () {
-        return function (councillors2, selections2) {
-
-            var councillors = angular.copy(councillors2);
-            var selections = angular.copy(selections2);
+        return function (councillors, selections) {
 
             if (councillors == null || selections == null)
                 return [];
@@ -74,12 +71,12 @@ angular.module('councillorFilters', ['myApp.filter'])
                     if (selections.factions == null || selections.factions.length == 0)
                         mustSave = true;
                     else
-                        for (var councilId in selections.factions) {
-                            var council = selections.factions[councilId];
+                        for (var factionId in selections.factions) {
+                            var faction = selections.factions[factionId];
 
                             for (var groupId in councillor.group) {
                                 var group = councillor.group[groupId];
-                                if (group === council.item) {
+                                if (group === faction.item) {
                                     mustSave = true;
                                     break;
                                 }
@@ -121,10 +118,8 @@ angular.module('councillorFilters', ['myApp.filter'])
         };
     })
     .filter('rangePrepare', function () {
-        return function (councillors2, rangeCount2) {
+        return function (councillors2, rangeCount) {
             var councillors = angular.copy(councillors2);
-            var rangeCount = angular.copy(rangeCount2);
-
             if (councillors == null)
                 return [];
 

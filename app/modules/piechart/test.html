@@ -1,0 +1,39 @@
+<html ng-app="myApp">
+
+<script src="http://code.highcharts.com/adapters/standalone-framework.js"></script>
+<script src="http://code.highcharts.com/highcharts.js"></script>
+
+<script src="../../bower_components/angular/angular.js"></script>
+<script src="module.js"></script>
+
+<script>
+
+
+    angular.module('myApp', ['myApp.piechart'])
+
+            .controller('testCtrl', ['$scope', function ($scope) {
+                $scope.title = "Test page";
+
+                $scope.b = "bbbbbb";
+
+                $scope.graphTitle = "mon titre";
+                $scope.graphData = [["a", 10], ["b", 20], ["c", 30], ["d", 40], ["e", 50]];
+
+            }])
+
+</script>
+
+
+<body ng-controller="testCtrl">
+
+    <h1>{{title}}</h1>
+
+    <pie-chart-test data="graphData" title="graphTitle"></pie-chart-test>
+
+</body>
+
+
+
+
+
+</html>

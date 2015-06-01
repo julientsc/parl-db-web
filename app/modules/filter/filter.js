@@ -1,18 +1,8 @@
 'use strict';
 
-angular.module('myApp.filter', ['ngRoute', 'myApp.services', 'ui.multiselect', 'councillorFilters'])
-/*
-    .config(['$routeProvider', function ($routeProvider) {
-        $routeProvider.when('/filter:name?', {
-            templateUrl: 'filter/filter.html',
-            controller: 'filtlerCtrl',
-            reloadOnSearch: false
-        });
-    }])
-*/
+angular.module('myApp.filter', ['ngRoute', 'myApp.services', 'ui.multiselect'])
 
-
-    .controller('filterCtrl', ['$scope', 'QueriesService', '$location', function ($scope, QueriesService, $location) {
+    .controller('filterCtrl', ['$scope', 'QueriesService', '$location', 'FilterUpdateService', function ($scope, QueriesService, $location, FilterUpdateService) {
 
         $scope.selection = {};
 
@@ -26,54 +16,49 @@ angular.module('myApp.filter', ['ngRoute', 'myApp.services', 'ui.multiselect', '
 
         $scope.filters = {};
 
-        $scope.councillors = [];
 
-        $scope.updateCouncillors = function (data) {
-            $scope.councillors = angular.copy(data);
-        };
-
-        QueriesService.getCouncillors($scope.updateCouncillors);
+       // QueriesService.getCouncillors($scope.updateCouncillors);
 
 
 
         $scope.updateCantons = function (data) {
-            data = angular.copy(data);
+            data =(data);
             $scope.filters.cantons = data;
             $scope.setChecked("cantons", data);
             $scope.loadCount++;
         };
 
         $scope.updateCouncils = function (data) {
-            data = angular.copy(data);
+            data =(data);
             $scope.filters.councils = data;
             $scope.setChecked("councils", data);
             $scope.loadCount++;
         };
 
         $scope.updateFactions = function (data) {
-            data = angular.copy(data);
+            data =(data);
             $scope.filters.factions = data;
             $scope.setChecked("factions", data);
             $scope.loadCount++;
         };
 
         $scope.updateLanguages = function (data) {
-            data = angular.copy(data);
+            data =(data);
             $scope.filters.languages = data;
             $scope.setChecked("languages", data);
             $scope.loadCount++;
         };
 
         $scope.updateParties = function (data) {
-            data = angular.copy(data);
+            data =(data);
             $scope.filters.parties = data;
             $scope.setChecked("parties", data);
             $scope.loadCount++;
         };
 
         $scope.setChecked = function(name, data) {
-            name = angular.copy(name);
-            data = angular.copy(data);
+            name =(name);
+            data =(data);
             var v = $location.search()[name];
             var va = [];
             if (Object.prototype.toString.call(v) === '[object Array]') {
@@ -119,6 +104,9 @@ angular.module('myApp.filter', ['ngRoute', 'myApp.services', 'ui.multiselect', '
             }
             $location.search(loc);
 
+            console.log("Filter change");
+            FilterUpdateService.update($scope.selection);
+
         };
 
 
@@ -127,9 +115,9 @@ angular.module('myApp.filter', ['ngRoute', 'myApp.services', 'ui.multiselect', '
         return {
             restrict: 'E',
             scope: {
-                councillors: '=councillors'
+                selection: '=data'
             },
-            templateUrl: 'filter/filter.html',
+            templateUrl: 'modules/filter/filter.html',
             controller: 'filterCtrl'
         };
     });

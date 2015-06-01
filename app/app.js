@@ -4,12 +4,12 @@
 angular.module('myApp', [
     'ngRoute',
     'myApp.filter',
-    'myApp.view2',
+    'myApp.view.default',
     'myApp.version',
     'myApp.templates',
     'myApp.services',
     'councillorFilters'
 ]).
     config(['$routeProvider', function ($routeProvider) {
-        $routeProvider.otherwise({redirectTo: '/view2', reloadOnSearch: false});
+        $routeProvider.otherwise({redirectTo: '/'});
     }]);

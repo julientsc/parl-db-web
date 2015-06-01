@@ -1,7 +1,6 @@
 <div class="panel panel-default">
     <div class="panel-heading">Tris possibles</div>
     <div class="panel-body">
-
         <div align="center">
             <multiselect class="input-lg" multiple="true"
                          ng-model="selection.cantons" ms-header="Filtre par Canton"
@@ -29,8 +28,5 @@
                          options="party.name for party in filters.parties"
                          change="changeSelection()"></multiselect>
         </div>
-
     </div>
-
-    {{selection}}
 </div>

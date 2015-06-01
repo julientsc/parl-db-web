@@ -1,0 +1,56 @@
+
+<button ng-click="getFilters()">Get Filter</button>
+ {{filter}}
+<div></div>
+<button class="btn btn-xs"
+        ng-init="filter.canton[canton].isSelected = false"
+        ng-click="filter.canton[canton].isSelected = !filter.canton[canton].isSelected"
+        ng-class="filter.canton[canton].isSelected ? 'btn-success' : 'btn-primary'"
+        ng-repeat="canton in cantons" style="margin: 1px;">
+    {{canton}}
+</button>
+</div>
+
+<div>
+<button class="btn btn-xs"
+        ng-init="filter.party[party].isSelected = false"
+        ng-click="filter.party[party].isSelected = !filter.party[party].isSelected"
+        ng-class="filter.party[party].isSelected ? 'btn-success' : 'btn-primary'"
+        ng-repeat="party in parties" style="margin: 1px;">
+    {{party}}
+</button>
+</div>
+
+<div>
+<button class="btn btn-xs"
+        ng-init="filter.lang[lang].isSelected = false"
+        ng-click="filter.lang[lang].isSelected = !filter.lang[lang].isSelected"
+        ng-class="filter.lang[lang].isSelected ? 'btn-success' : 'btn-primary'"
+        ng-repeat="lang in langs" style="margin: 1px;">
+    {{lang}}
+</button>
+</div>
+
+<div>
+<button class="btn btn-xs"
+        ng-init="filter.faction[faction].isSelected = false"
+        ng-click="filter.faction[faction].isSelected = !filter.faction[faction].isSelected"
+        ng-class="filter.faction[faction].isSelected ? 'btn-success' : 'btn-primary'"
+        ng-repeat="faction in factions" style="margin: 1px;">
+    {{faction}}
+</button>
+</div>
+
+<div>
+<button class="btn btn-xs"
+        ng-init="filter.council[council].isSelected = false"
+        ng-click="filter.council[council].isSelected = !filter.council[council].isSelected"
+        ng-class="filter.council[council].isSelected ? 'btn-success' : 'btn-primary'"
+        ng-repeat="council in councils" style="margin: 1px;">
+    {{council}}
+</button>
+</div>
+
+<div ng-init="setFilters()"></div>
+
+
