@@ -22,39 +22,24 @@ angular.module('myApp.filter', ['ngRoute', 'myApp.services', 'ui.multiselect'])
 
 
         $scope.updateCantons = function (data) {
-            data =(data);
             $scope.filters.cantons = data;
-            $scope.setChecked("cantons", data);
-            $scope.loadCount++;
         };
 
         $scope.updateCouncils = function (data) {
-            data =(data);
             $scope.filters.councils = data;
-            $scope.setChecked("councils", data);
-            $scope.loadCount++;
         };
 
         $scope.updateFactions = function (data) {
-            data =(data);
             $scope.filters.factions = data;
-            $scope.setChecked("factions", data);
-            $scope.loadCount++;
         };
 
         $scope.updateLanguages = function (data) {
-            data =(data);
-            $scope.filters.languages = data;
-            $scope.setChecked("languages", data);
-            $scope.loadCount++;
-        };
+             $scope.filters.languages = data;
+         };
 
         $scope.updateParties = function (data) {
-            data =(data);
             $scope.filters.parties = data;
-            $scope.setChecked("parties", data);
-            $scope.loadCount++;
-        };
+         };
 
         $scope.setChecked = function(name, data) {
             name =(name);

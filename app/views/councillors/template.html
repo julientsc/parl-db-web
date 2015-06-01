@@ -1,0 +1,24 @@
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">Parlementaire <small>{{filtredCouncillors.length}} / {{councillors.length}}</small></h3>
+    </div>
+    <div class="panel-body">
+        <div class="row">
+            <div ng-repeat="councillor in filtredCouncillors4">
+                <div class="col-md-3">
+                    <councillor-display councillor="councillor[0]"></councillor-display>
+                </div>
+                <div class="col-md-3">
+                    <councillor-display councillor="councillor[1]"></councillor-display>
+                </div>
+                <div class="col-md-3">
+                    <councillor-display councillor="councillor[2]"></councillor-display>
+                </div>
+                <div class="col-md-3">
+                    <councillor-display councillor="councillor[3]"></councillor-display>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

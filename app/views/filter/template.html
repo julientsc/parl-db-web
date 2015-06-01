@@ -1,0 +1,62 @@
+<div class="panel panel-default" ng-init="init()">
+    <div class="panel-heading"><h3 class="panel-title">Filtres</h3></div>
+
+    <div class="panel-body">
+        <h4>Cantons</h4>
+        <div>
+            <button class="btn btn-xs"
+                    ng-click="filter.canton[canton.id].isSelected = !filter.canton[canton.id].isSelected; updateLink();"
+                    ng-class="filter.canton[canton.id].isSelected ? 'btn-success' : 'btn-primary'"
+                    ng-repeat="canton in cantons" style="margin: 1px;">
+                {{canton.name}}
+            </button>
+        </div>
+
+
+        <h4>Partis Politique</h4>
+        <div>
+            <button class="btn btn-xs"
+                    ng-click="filter.party[party.id].isSelected = !filter.party[party.id].isSelected; updateLink();"
+                    ng-class="filter.party[party.id].isSelected ? 'btn-success' : 'btn-primary'"
+                    ng-repeat="party in parties" style="margin: 1px;">
+                {{party.name}}
+            </button>
+        </div>
+
+
+        <h4>Langues des Conseillés</h4>
+        <div>
+            <button class="btn btn-xs"
+                    ng-click="filter.lang[language.id].isSelected = !filter.lang[language.id].isSelected; updateLink();"
+                    ng-class="filter.lang[language.id].isSelected ? 'btn-success' : 'btn-primary'"
+                    ng-repeat="language in languages" style="margin: 1px;">
+                {{language.id}}
+            </button>
+        </div>
+
+
+        <h4>Groupes Politique</h4>
+        <div>
+            <button class="btn btn-xs"
+                    ng-click="filter.faction[faction.id].isSelected = !filter.faction[faction.id].isSelected; updateLink();"
+                    ng-class="filter.faction[faction.id].isSelected ? 'btn-success' : 'btn-primary'"
+                    ng-repeat="faction in factions" style="margin: 1px;">
+                {{faction.name}}
+            </button>
+        </div>
+
+
+        <h4>Type de Conseil</h4>
+        <div>
+            <button class="btn btn-xs"
+                    ng-click="filter.council[council.id].isSelected = !filter.council[council.id].isSelected; updateLink();"
+                    ng-class="filter.council[council.id].isSelected ? 'btn-success' : 'btn-primary'"
+                    ng-repeat="council in councils" style="margin: 1px;">
+                {{council.name}}
+            </button>
+        </div>
+
+    </div>
+</div>
+
+

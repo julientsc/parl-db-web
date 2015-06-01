@@ -7,6 +7,8 @@ angular.module('myApp', [
     'myApp.view.default',
     'myApp.version',
     'myApp.templates',
+    'myApp.view.filter',
+    'myApp.view.councillors',
     'myApp.services',
     'councillorFilters'
 ]).
